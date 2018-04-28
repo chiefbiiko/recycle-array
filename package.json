@@ -1,0 +1,28 @@
+{
+  "name": "recycle-array",
+  "version": "0.0.0",
+  "description": "recycle numeric arrays - impl available in js wasm and c",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiefbiiko/recycle-array.git"
+  },
+  "keywords": [
+    "recycle",
+    "array"
+  ],
+  "author": "Noah Anabiik Schwarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiefbiiko/recycle-array/issues"
+  },
+  "homepage": "https://github.com/chiefbiiko/recycle-array#readme",
+  "devDependencies": {
+    "node-gyp-build": "^3.3.0",
+    "prebuildify": "^2.6.0",
+    "tape": "^4.9.0"
+  }
+}
