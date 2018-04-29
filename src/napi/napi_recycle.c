@@ -1,5 +1,6 @@
-#include "recycle.h"
+#include <stdio.h>
 #include <node_api.h>
+#include "recycle.h"
 
 #define THROW_MAYBE(env, status, msg) \
   if (status != 0) napi_throw_error(env, NULL, msg);
