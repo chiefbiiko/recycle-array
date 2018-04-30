@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <node_api.h>
 #include "recycle.h"
 
@@ -13,7 +12,6 @@ napi_value _recycle (napi_env, env, napi_callback_info info) {
   status = napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
   THROW_MAYBE(env, status, NULL, "napi_get_cb_info failed");
 
-  // gettin argv[0] arr; assumin Float32[]
   napi_typedarray_type type;
   napi_value input_buf;
   size_t arr_len, byte_offset;
@@ -33,7 +31,8 @@ napi_value _recycle (napi_env, env, napi_callback_info info) {
   napi_value output_buf;
   void* output_ptr = NULL;
   size_t out_byte_len = (size_t) (sizeof(float) * n);
-  status = napi_create_arraybuffer(env, out_byte_len, &output_ptr, &output_buf);
+  status = napi_create_arraybuffer(env, out_byte_len, &output_ptr,
+    &output_buf);
   THROW_MAYBE(env, status, NULL, "napi_create_arraybuffer failed");
 
   napi_value output_arr;
@@ -41,7 +40,6 @@ napi_value _recycle (napi_env, env, napi_callback_info info) {
     &output_arr);
   THROW_MAYBE(env, status, NULL, "napi_create_typedarray failed");
 
-  //  callin recycle from recycle.h
   float* x = (float*) (arr) + byte_offset;
   float* y = (float*) (output_ptr);
   recycle(x, y, arr_len, (size_t) n);
