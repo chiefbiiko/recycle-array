@@ -4,7 +4,9 @@
   "description": "recycle numeric arrays - impl available in js wasm and c",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "tape test.js",
+    "build": "node-gyp rebuild",
+    "install": "node-gyp-build"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,10 @@
   },
   "homepage": "https://github.com/chiefbiiko/recycle-array#readme",
   "devDependencies": {
+    "node-gyp": "^3.6.2",
     "node-gyp-build": "^3.3.0",
     "prebuildify": "^2.6.0",
     "tape": "^4.9.0"
-  }
+  },
+  "dependencies": {}
 }
