@@ -6,6 +6,7 @@
   "scripts": {
     "test": "tape test.js",
     "build": "node-gyp rebuild",
+    "prebuild": "prebuildify --all --strip --napi",
     "install": "node-gyp-build"
   },
   "repository": {
